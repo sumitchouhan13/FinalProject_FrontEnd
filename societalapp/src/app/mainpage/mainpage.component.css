@@ -1,0 +1,36 @@
+body {
+  background-color: #e3f2fd;
+}
+
+.heading {
+  font-size: 20px;
+  font-weight: 600;
+  color: #3d5afe;
+}
+
+.line1 {
+  color: #000;
+  font-size: 12px;
+}
+
+.line2 {
+  color: #000;
+  font-size: 12px;
+}
+
+.line3 {
+  color: #000;
+  font-size: 12px;
+}
+
+.cards {
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.cards:hover {
+  box-shadow: 4px 5px 5px 1px #e9ecef;
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  transform: scale(1.1);
+}

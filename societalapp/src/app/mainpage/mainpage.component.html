@@ -1,0 +1,40 @@
+<div class="container-fluid">
+  <!-- Page Heading -->
+
+  <div class="card shadow mb-4 mt-5" style="width: 100%">
+    <div class="card-body">
+      <div class="row">
+        <div class="main text-center mt-2">
+          <h6 class="heading">Apartments</h6>
+          <p class="text-info">
+            Everything you'll need to get information about the apartments
+          </p>
+        </div>
+        <div class="container mt-4 d-flex justify-content-center">
+          <div class="row g-0">
+            <div
+              class="col-md-3 border-right"
+              *ngFor="let building of buildings"
+            >
+              <a
+                href="http://www.urbanajewels.com/"
+                target="_blank"
+                style="text-decoration: none"
+              >
+                <div class="cards">
+                  <div class="first bg-white p-4 text-center">
+                    <img src="{{ building.src }}" />
+                    <h5>{{ building.name }}</h5>
+                    <p class="line1">
+                      {{ building.desc }}
+                    </p>
+                  </div>
+                </div></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
