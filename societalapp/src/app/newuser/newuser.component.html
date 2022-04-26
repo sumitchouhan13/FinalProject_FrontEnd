@@ -3,14 +3,7 @@
     <div class="col-xl-12 col-lg-7">
       <div class="card shadow mb-4">
         <div
-          class="
-            card-header
-            py-3
-            d-flex
-            flex-row
-            align-items-center
-            justify-content-between
-          "
+          class="card-header py-3 d-flex flex-row align-items-center justify-content-between"
         >
           <h6 class="m-0 font-weight-bold text-primary">Create New User</h6>
         </div>
@@ -22,18 +15,54 @@
                   <div class="col-lg-6">
                     <label for="">Owner Name</label>
                     <input
+                      id="onwer"
                       type="text"
                       formControlName="owner"
                       class="form-control"
                     />
+                    <span
+                      *ngIf="
+                        !userForm.get('owner')?.valid &&
+                        (userForm.get('owner')?.touched ||
+                          userForm.get('owner')?.dirty)
+                      "
+                      class="text-danger"
+                    >
+                      {{
+                        userForm.get("owner")?.hasError("required")
+                          ? "Name Required"
+                          : userForm.get("owner")?.getError("invalid")
+                      }}</span
+                    >
+                    <div *ngIf = "userForm.get('owner')?.hasError('minlength') && !userForm.get('owner')?.hasError('required')" class = "text-danger">
+                      <span>Name should be atleast 4 characters</span>
+                    </div>
+                    <div *ngIf = "userForm.get('owner')?.hasError('maxlength') && !userForm.get('owner')?.hasError('required')" class = "text-danger">
+                      <span>Name should be at max 45 characters</span>
+                    </div>  
                   </div>
                   <div class="col-lg-6">
                     <label for="">Owner Email</label>
                     <input
+                      id="email"
                       type="email"
                       formControlName="email"
                       class="form-control"
                     />
+                    <span
+                      *ngIf="
+                        !userForm.get('email')?.valid &&
+                        (userForm.get('email')?.touched ||
+                          userForm.get('email')?.dirty)
+                      "
+                      class="text-danger"
+                    >
+                      {{
+                        userForm.get("email")?.hasError("required")
+                          ? "Email Required"
+                          : userForm.get("email")?.getError("invalid")
+                      }}</span
+                    >
                   </div>
                 </div>
                 <div class="row">
@@ -46,6 +75,7 @@
                     /> -->
                     <label for="">Building</label>
                     <select
+                      id="building"
                       class="form-control"
                       aria-label="Default select"
                       formControlName="building"
@@ -55,6 +85,20 @@
                       <option value="Sapphire">Sapphire</option>
                       <option value="Emerald">Emerald</option>
                     </select>
+                    <span
+                      *ngIf="
+                        !userForm.get('building')?.valid &&
+                        (userForm.get('building')?.touched ||
+                          userForm.get('building')?.dirty)
+                      "
+                      class="text-danger"
+                    >
+                      {{
+                        userForm.get("building")?.hasError("required")
+                          ? "Building Name Required"
+                          : userForm.get("building")?.getError("invalid")
+                      }}</span
+                    >
                   </div>
                   <div class="col-lg-6">
                     <!-- <label for="">Owned</label>
@@ -65,6 +109,7 @@
                     /> -->
                     <label for="">Owned</label>
                     <select
+                      id="owned"
                       class="form-control"
                       aria-label="Default select"
                       formControlName="owned"
@@ -72,6 +117,20 @@
                       <option value="Yes">Yes</option>
                       <option value="No">No</option>
                     </select>
+                    <span
+                      *ngIf="
+                        !userForm.get('owned')?.valid &&
+                        (userForm.get('owned')?.touched ||
+                          userForm.get('owned')?.dirty)
+                      "
+                      class="text-danger"
+                    >
+                      {{
+                        userForm.get("owned")?.hasError("required")
+                          ? "Owned Or Not Required"
+                          : userForm.get("owned")?.getError("invalid")
+                      }}</span
+                    >
                   </div>
                 </div>
                 <div class="row mt-3">
